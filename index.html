@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Builder</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+    <main>
+        <div class="split-layout">
+            <div class="form-container">
+                <div class="header">
+                    <h1>AI Resume</h1>
+                </div>
+                <form id="resume-form">
+                    <div class="form-section">
+                        <h3>Personal Details</h3>
+                        <div class="form-group">
+                            <label>Full Name</label>
+                            <input type="text" id="fullName" placeholder="Your Full Name" required>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Email</label>
+                                <input type="email" id="email" placeholder="Your Email" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Phone</label>
+                                <input type="tel" id="phone" placeholder="Your Phone Number" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>LinkedIn / GitHub / Portfolio (Separated by |)</label>
+                            <input type="text" id="links" placeholder="Your LinkedIn Profile | Github Profile">
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>Career Objective</h3>
+                        <div class="form-group">
+                            <textarea id="objective" rows="3"
+                                placeholder="Detail-oriented and innovative AI & DS Engineer..."></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <div
+                            style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                            <h3>Education</h3>
+                            <button type="button" id="add-education-btn" class="btn secondary small">+ Add</button>
+                        </div>
+                        <div id="education-container">
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>Technical Skills</h3>
+                        <div class="form-group">
+                            <label>Select a Skill to Add</label>
+                            <select id="skillDropdown">
+                                <option value="">-- Select Skill --</option>
+                                <option value="Python">Python</option>
+                                <option value="Java">Java</option>
+                                <option value="C">C</option>
+                                <option value="C++">C++</option>
+                                <option value="JavaScript">JavaScript</option>
+                                <option value="HTML/CSS">HTML/CSS</option>
+                                <option value="React">React</option>
+                                <option value="Node.js">Node.js</option>
+                                <option value="SQL">SQL</option>
+                                <option value="MongoDB">MongoDB</option>
+                                <option value="Artificial Intelligent">Artificial Intelligent</option>
+                                <option value="Machine Learning">Machine Learning</option>
+                                <option value="Deep Learing">Deep Learing</option>
+                                <option value="Computer Vision">Computer Vision</option>
+                                <option value="Prompt Engineer">Prompt Engineer</option>
+                                <option value="Data Analysis">Data Analysis</option>
+                                <option value="Git/GitHub">Git/GitHub</option>
+                                <option value="AWS">AWS</option>
+                                <option value="Microsoft Azure">Microsoft Azure</option>
+                                <option value="Google Colud">Google Colud</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Your Skills (Edit or Type Custom)</label>
+                            <textarea id="skills" rows="3" placeholder="Python, Java, HTML, CSS..."></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <div
+                            style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                            <h3>Work Experience</h3>
+                            <button type="button" id="add-experience-btn" class="btn secondary small">+ Add</button>
+                        </div>
+                        <div id="experience-container">
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <div
+                            style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                            <h3>Projects</h3>
+                            <button type="button" id="add-project-btn" class="btn secondary small">+ Add</button>
+                        </div>
+                        <div id="projects-container">
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>Certifications</h3>
+                        <div class="form-group">
+                            <textarea id="certifications" rows="2"
+                                placeholder="Certificate Name | Issuer (Date)"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <div
+                            style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                            <h3>Achievements & Leadership</h3>
+                            <button type="button" id="add-achievement-btn" class="btn secondary small">+ Add</button>
+                        </div>
+                        <div id="achievements-container">
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="preview-container">
+                <div class="preview-header">
+                    <div style="display: flex; gap: 10px; margin-left: auto;">
+                        <button id="reset-btn" class="btn secondary" style="display: none;">Create Another
+                            Resume</button>
+                        <button id="download-btn" class="btn primary" style="display: none;">Download Resume</button>
+                    </div>
+                </div>
+                <div class="preview-scroll">
+                    <div id="resume-preview">
+                        <div class="resume-page">
+                            <div class="placeholder-text">
+                                <p>Fill details and click Generate to see preview</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>
