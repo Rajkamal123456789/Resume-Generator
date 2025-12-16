@@ -371,6 +371,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const pages = resumePreview.querySelectorAll('.resume-page');
             let hasContent = false;
+            console.log("This is hasContent:",hasContent);
+            
 
             pages.forEach(page => {
                 if (page.innerText.trim().length > 0) {
